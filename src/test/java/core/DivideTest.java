@@ -1,0 +1,25 @@
+package core;
+
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.instanceOf;
+import static org.hamcrest.Matchers.closeTo;
+
+import org.testng.annotations.Test;
+
+public class DivideTest {
+	
+	@Test
+    public void divide_test_instanceOf() {
+		assertThat(Calculator.divide(4, 2), instanceOf(Double.class));}
+    @Test
+    public void divide_test_2_param() {
+    	assertThat(Calculator.divide(5, 2), closeTo(2.5, 0.09));}
+    
+	@Test
+    public void divide_test_3_param() {
+    	assertThat(Calculator.divide(10, 3, 2), closeTo(1.6, 0.09));}
+    @Test
+    public void divide_test_4_param() {
+    	assertThat(Calculator.divide(22, 4, 3, 2), closeTo(0.9, 0.09)); }
+
+}
